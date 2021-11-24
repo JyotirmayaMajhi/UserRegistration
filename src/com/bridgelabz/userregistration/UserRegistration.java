@@ -9,7 +9,10 @@ public class UserRegistration {
 		Pattern pattern = new Pattern();
 		pattern.isValidFirstName();
 		firstName = pattern.getFirstName();
-		System.out.println("First Name : " + firstName);
+		
+		pattern.addLastName();
+		lastName = pattern.getLastName();
+		System.out.println("\nUser Data:-\n\tFirst Name : " + firstName + "\n\tLast Name : " + lastName);
 
 	}
 
