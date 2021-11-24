@@ -42,7 +42,18 @@ public class Pattern {
 			addEmail();
 		}
 	}
-
+	
+	public void addPhoneNumber() {
+		System.out.print("Enter Phone Number : ");
+		phoneNumber = sc.nextLine();
+		boolean check = phoneNumber.matches("^([0-9]{1,2})\\s([0-9]{10})$");
+		if (check == true) {
+		} else {
+			System.out.println("Invalid Phone Number Add again (Eg:91 9431295849)");	
+			addPhoneNumber();
+		}
+	}
+	
 	public String getFirstName() {
 		return firstName;
 	}
