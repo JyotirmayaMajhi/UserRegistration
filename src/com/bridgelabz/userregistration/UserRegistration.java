@@ -18,8 +18,12 @@ public class UserRegistration {
 		pattern.addEmail(); 
 		user.email = pattern.getEmail();
 
-		pattern.addPhoneNumber(); // Phone Number Adding
+		pattern.addPhoneNumber(); 
 		user.phoneNumber = pattern.getPhoneNumber();
+		user.display();
+		
+		pattern.addPassword(); 
+		user.password = pattern.getPassword();
 		user.display();
 	}
 

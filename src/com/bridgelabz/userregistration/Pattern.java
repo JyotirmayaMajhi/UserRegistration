@@ -54,6 +54,17 @@ public class Pattern {
 		}
 	}
 	
+	public void addPassword() {
+		System.out.print("Enter Password : ");
+		password = sc.nextLine();
+		boolean check = password.matches("^[a-zA-Z]{8,}$");
+		if (check == true) {
+		} else {
+			System.out.println("Invalid password format \nAdd again [Atleast 8 Character ]");
+			addPassword();
+		}
+	}
+	
 	public String getFirstName() {
 		return firstName;
 	}
