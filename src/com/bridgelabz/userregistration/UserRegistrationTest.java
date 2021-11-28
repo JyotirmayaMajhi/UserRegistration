@@ -16,18 +16,6 @@ public class UserRegistrationTest {
 	String Email;
 	static UserData userdata;
 	static Pattern pattern;
-//	public static UserRegistrationTest instance;
-	
-//	public UserRegistrationTest(String email) {
-//		super();
-//		this.Email = email;
-//	}
-//	
-//	@Parameterized.Parameters
-//	public Collection input() {
-//		return Arrays.asList(null);
-//		
-//	}
 	
 	@BeforeClass
 	public static void init() {
@@ -51,11 +39,11 @@ public class UserRegistrationTest {
 		assertEquals(true, userdata.getLastName().matches("^([A-Z]{1}+[a-z]{2,})*$"));
 	}
 	
-	@Test
-	public void testAddedEmailShouldBeValid() {
-		 pattern.addEmail();
-		assertEquals(true, userdata.getEmail().matches("^[0-9a-zA-Z+-._]+@[-+_.0-9a-zA-Z]*.[a-zA-Z]{2,3}.([a-zA-z]{2,3})*$"));
-	}
+//	@Test
+//	public void testAddedEmailShouldBeValid() {
+//		 pattern.addEmail();
+//		assertEquals(true, userdata.getEmail().matches("^[0-9a-zA-Z+-._]+@[-+_.0-9a-zA-Z]*.[a-zA-Z]{2,3}.([a-zA-z]{2,3})*$"));
+//	}
 	
 	@Test
 	public void testAddedPhoneNumberShouldBeValid() {
