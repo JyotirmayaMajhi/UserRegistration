@@ -57,7 +57,7 @@ public class EmailTest {
 	}
 	
 	@Test
-	public void testValidEmails() {
+	public void testValidEmails() throws InvalidUserDetailsException {
 		assertEquals(expectedResult,pattern.addEmail(emailAddress));
 	}
 }
