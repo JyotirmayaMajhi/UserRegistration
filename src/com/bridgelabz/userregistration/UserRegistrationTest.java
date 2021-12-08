@@ -10,7 +10,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-//@RunWith(Parameterized.class)
+
 public class UserRegistrationTest {
 
 	String Email;
@@ -28,41 +28,47 @@ public class UserRegistrationTest {
 
 	@Test
 	public void testAddedFistNameShouldBeValid() {
-		 pattern.isValidFirstName();
-
-		assertEquals(true, userdata.getFirstName().matches("^([A-Z]{1}+[a-z]{2,})*$"));
 		
+		IUserRegistration isvalidateFirstName = (FirstName) -> {
+			
+		assertEquals(true, userdata.getFirstName().matches("^([A-Z]{1}+[a-z]{2,})*$"));
+		return false;
 		 
-	}
-	
+	};
+}
 	@Test
 	
 	public void testAddedLastNameShouldBeValid() {
-		 pattern.addLastName();
+		IUserRegistration isvalidateLastName = (LastName) -> {
 		assertEquals(true, userdata.getLastName().matches("^([A-Z]{1}+[a-z]{2,})*$"));
-	}
+		return false;
+	};
+}
 	
 	@Test
 	public void testAddedEmailShouldBeValid() {
-		
-		 pattern.addEmail();
+		IUserRegistration isvalidateEmail = (email) -> {
 		assertEquals(true, userdata.getEmail().matches("^[0-9a-zA-Z+-._]+@[-+_.0-9a-zA-Z]{2,}.[a-zA-Z]{2,3}.([a-zA-z]{2,3})*$"));
-	}
+		return false;
+	};
+}
 	
 	@Test
 	public void testAddedPhoneNumberShouldBeValid() {
-		
-		 pattern.addPhoneNumber();
+		IUserRegistration isvalidatePhoneNumber = (phoneNumber) -> {
 		assertEquals(true, userdata.getPhoneNumber().matches("^([0-9]{1,2})\\s([0-9]{10})$"));
-	}
+		return false;
+	};
+}
 
 	
 	@Test
 	public void testAddedPasswordShouldBeValid() {
-		
-		 pattern.addPassword();
+		IUserRegistration isvalidatePassword = (password) -> {
 		assertEquals(true, userdata.getPassword().matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])"
-				+ "(?=.*(@)).{8,}$"));
-	}
+		 + "(?=.*(@)).{8,}$"));
+		return false;
+	};
+}
 	
 }

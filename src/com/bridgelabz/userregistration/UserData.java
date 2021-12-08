@@ -9,7 +9,7 @@ public class UserData {
 	private String phoneNumber;
 	private String password;
 	
-	private UserData() {
+	UserData() {
 		
 	}
 	
